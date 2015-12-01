@@ -59,12 +59,20 @@ void main()
 			memcpy(m2, M1, sizeof(m2));
 			cout << "Degree?" << endl;
 			cin >> stepen;
-			degree(M1, m2, m3);
-			for (int i = 1;i < stepen;i++)
+			if (stepen == 2)
 			{
-				memcpy(m2, m3, sizeof(m2));
 				degree(M1, m2, m3);
 			}
+			else
+			{
+				degree(M1, m2, m3);
+				for (int i = 2;i < stepen;i++)
+				{
+					memcpy(m2, m3, sizeof(m2));
+					degree(M1, m2, m3);
+				}
+			}
+			
 			out(m3);		
 		}
 			break;
