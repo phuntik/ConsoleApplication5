@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-void degree(int x[3][3], int y[3][3], int m3[3][3])
+void degree(int m1[3][3], int m2[3][3], int m3[3][3])
 {	
 	for (int i = 0; i < 3; i++) 
 	{
@@ -12,7 +12,7 @@ void degree(int x[3][3], int y[3][3], int m3[3][3])
 			m3[i][j] = 0; //ìàòðèöà ðåçóëüòàòà
 			for (int k = 0; k < 3; k++) 
 			{
-				m3[i][j] += x[i][k] * y[k][j];
+				m3[i][j] += m1[i][k] * m2[k][j];
 			}
 		}
 	}		
