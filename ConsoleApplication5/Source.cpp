@@ -3,16 +3,16 @@
 #include <string>
 using namespace std;
 
-void degree(int m1[3][3], int m2[3][3], int m3[3][3])
+void degree(int x[3][3], int y[3][3], int m3[3][3])
 {	
 	for (int i = 0; i < 3; i++) 
 	{
 		for (int j = 0; j < 3; j++) 
 		{
-			m3[i][j] = 0; //матрица результата
+			m3[i][j] = 0; //Г¬Г ГІГ°ГЁГ¶Г  Г°ГҐГ§ГіГ«ГјГІГ ГІГ 
 			for (int k = 0; k < 3; k++) 
 			{
-				m3[i][j] += m1[i][k] * m2[k][j];
+				m3[i][j] += x[i][k] * y[k][j];
 			}
 		}
 	}		
@@ -32,19 +32,19 @@ void out(int m3[3][3])
 }
 void main()
 {
-	int M1[3][3], M2[3][3], m1[3][3], m2[3][3], m3[3][3];		/*	m2,m3 - вспомогательные матрицы,		*/
-	cout << "Fill in first matrix" << endl;						/*	используемые при возведении в степень,	*/
-	for (int s = 0;s < 3;s++)//строки							/*	чтобы не трогать искомыу матрицы.		*/
+	int M1[3][3], M2[3][3], m1[3][3], m2[3][3], m3[3][3];		/*	m2,m3 - ГўГ±ГЇГ®Г¬Г®ГЈГ ГІГҐГ«ГјГ­Г»ГҐ Г¬Г ГІГ°ГЁГ¶Г»,		*/
+	cout << "Fill in first matrix" << endl;						/*	ГЁГ±ГЇГ®Г«ГјГ§ГіГҐГ¬Г»ГҐ ГЇГ°ГЁ ГўГ®Г§ГўГҐГ¤ГҐГ­ГЁГЁ Гў Г±ГІГҐГЇГҐГ­Гј,	*/
+	for (int s = 0;s < 3;s++)//Г±ГІГ°Г®ГЄГЁ							/*	Г·ГІГ®ГЎГ» Г­ГҐ ГІГ°Г®ГЈГ ГІГј ГЁГ±ГЄГ®Г¬Г»Гі Г¬Г ГІГ°ГЁГ¶Г».		*/
 	{
-		for (int c = 0;c < 3;c++)//столбцы
+		for (int c = 0;c < 3;c++)//Г±ГІГ®Г«ГЎГ¶Г»
 		{
 			cin >> M1[s][c];
 		}
 	}
 	cout << "Fill in second matrix" << endl;
-	for (int s = 0;s < 3;s++)//строки
+	for (int s = 0;s < 3;s++)//Г±ГІГ°Г®ГЄГЁ
 	{
-		for (int c = 0;c < 3;c++)//столбцы
+		for (int c = 0;c < 3;c++)//Г±ГІГ®Г«ГЎГ¶Г»
 		{
 			cin >> M2[s][c];
 		}
@@ -52,7 +52,7 @@ void main()
 	int numb = 0, stepen = 0;
 	cout << "Power first matrix - push 1\nMultiply matrics - push 2" << endl;
 	cin >> numb;
-	switch (numb) //выбор задания
+	switch (numb) //ГўГ»ГЎГ®Г° Г§Г Г¤Г Г­ГЁГї
 	{
 		case 1: 
 		{
